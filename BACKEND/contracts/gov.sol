@@ -2,12 +2,19 @@
 pragma solidity ^0.8.0;
 import "@openzeppelin/contracts/access/AccessControl.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
-import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
 contract Gov_side is AccessControl {
     using Counters for Counters.Counter;
     Counters.Counter private total_industries;
 
+    bytes32[] private all_industry = [
+        FOOD,
+        TECHNOLOGY,
+        MANUFACTURING,
+        AGRICULTURE
+    ];
+    uint256 private MIN_CORTEX_AMT = 5000000000000000000;
     // bytes32[] Indus_types;
     struct Emition_Limits {
         uint256 MIN_EMITION;
@@ -18,13 +25,14 @@ contract Gov_side is AccessControl {
     struct comp_data {
         string comp_name;
         address comp_contract_address;
-        uint256 past_year_emition;
+        uint256 time_stamp;
         bytes32 comp_type;
+        uint total_emision;
     }
 
-    IERC20 private CoTax_tkn;
+    ERC20 private CoTax_tkn;
 
-    constructor(IERC20 _CoTax_tkn) {
+    constructor(ERC20 _CoTax_tkn) {
         CoTax_tkn = _CoTax_tkn;
         _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
         _grantRole(HEAD_ROLE, msg.sender);
@@ -35,7 +43,6 @@ contract Gov_side is AccessControl {
     */
     mapping(bytes32 => Emition_Limits) public carbon_caps;
     mapping(address => bytes32) internal rolesOfComp;
-    mapping(address => comp_data) public all_comp;
 
     function set_caps(
         bytes32 catagory,
@@ -50,18 +57,24 @@ contract Gov_side is AccessControl {
         bro.MAX_EMITION = _MAX_EMITION;
     }
 
-    function add_comp(
-        string memory _comp_name,
-        address _comp_contract_address,
-        uint256 _past_year_emition,
-        bytes32 _comp_type
-    ) public onlyRole(HEAD_ROLE) {
-        comp_data storage bro = all_comp[_comp_contract_address];
-        bro.comp_name = _comp_name;
-        bro.comp_contract_address = _comp_contract_address;
-        bro.past_year_emition = _past_year_emition;
-        bro.comp_type = _comp_type;
+    function whitelist_comp(address _comp_add) public {
+        uint256 tkn_amount = ERC20(CoTax_tkn).balanceOf(_comp_add);
+        if (tkn_amount >= MIN_CORTEX_AMT) {
+            _grantRole(INDUSTRY_ROLE, _comp_add);
+        } else {
+            revert("Kam pese hai re baba");
+        }
     }
+
+    function change_minCortex(uint256 amt) external onlyRole(HEAD_ROLE) {
+        MIN_CORTEX_AMT = amt;
+    }
+
+    /**
+    ---------------------------------
+                INTERNAL
+    ---------------------------------
+    */
 
     function tax(address payable comp_add, uint256 gas_emition) internal {
         bytes32 role = rolesOfComp[comp_add];
@@ -91,6 +104,21 @@ contract Gov_side is AccessControl {
     {
         uint256 cal_reward = gas_emition_diff * 100000000000000000;
         IERC20(CoTax_tkn).transfer(comp_add, cal_reward);
+    }
+
+    function verify_indus(bytes32 name) internal view returns (bool) {
+        uint256 flag = 0;
+        for (uint256 i = 0; i < all_industry.length; i++) {
+            if (all_industry[i] == name) {
+                flag = 1;
+            }
+        }
+        require(flag == 1, "ROLE not found");
+        return true;
+    }
+
+    function govAddress() internal view returns (address) {
+        return address(this);
     }
 }
 // ERC20(tokenAddress).balanceOf(address(this))
