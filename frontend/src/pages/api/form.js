@@ -8,13 +8,13 @@ export default function handler(req, res) {
   
     // Guard clause checks for first and last name,
     // and returns early if they are not found
-    if (!body.name || !body.co2 || !body.cfc || !body.so2 || !body.type) {
+    if (!body.name || !body.CO2 || !body.CFC || !body.SO2 || !body.type) {
       // Sends a HTTP bad request error code
       return res.status(400).json({ data: 'Insufficient Data' })
     }
 
-    const totalEmissions = body.co2 + body.cfc + body.so2
+    var totalEmissions = parseInt(body.CO2) + parseInt(body.CFC) + parseInt(body.SO2)
     // Found the name.
     // Sends a HTTP success code
-    res.status(200).json({ data: `${body.name} ${body.type} ${totalEmissions}` })
+    res.status(200).json({ data: `${body.name} ${body.type} ${parseInt(totalEmissions)}` })
   }

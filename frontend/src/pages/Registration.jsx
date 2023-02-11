@@ -1,8 +1,13 @@
 import React from 'react'
+import CompanyReg from '@/components/CompanyReg'
+import Navbar from '@/components/Navbar'
 
 const Registration = () => {
   return (
-    <div>Registration</div>
+    <div>
+      <Navbar />
+      <CompanyReg />
+    </div>
   )
 }
 
