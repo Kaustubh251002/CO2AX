@@ -128,3 +128,20 @@ form:hover {
 a, input:focus, select:focus, textarea:focus, button:focus {
     outline: none;
 }
+
+.card {
+    background-color: #FFFFFF;
+    margin: 50px auto;
+    max-width: 400px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 10px 10px 30px #BDBDBD;
+  }
+  .card__image {
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+    max-height: 200px;
+  }
+  .card__copy {
+    padding: 20px;
+  }
