@@ -10,12 +10,15 @@
   },
   "dependencies": {
     "@next/font": "13.1.6",
+    "@web3modal/ethereum": "^2.1.1",
+    "@web3modal/react": "^2.1.1",
     "eslint": "8.34.0",
     "eslint-config-next": "13.1.6",
     "ethers": "^5.7.2",
     "next": "13.1.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-router-dom": "^6.8.1",
     "typewriter-effect": "^2.19.0",
     "wagmi": "^0.11.5"
   },

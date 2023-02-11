@@ -18,7 +18,7 @@ function WagmiProfile() {
     if (isConnected) {
         return (
             <div>
-                <button className="font-mono p-3 hover:scale-110 hover:border-2 hover:border-white text-white rounded transition duration-300 flex items-center gap-[10px] bg-gradient-to-r  from-violet-500 to-cyan-500 text-center"
+                <button className="font-mono p-3 hover:border-2 hover:border-white text-white rounded transition duration-300 flex  gap-[10px] bg-gradient-to-r  from-violet-500 to-cyan-500 text-center"
                     onClick={disconnect}>Disconnect</button>
                 <div className='text-center text-xl text-white font-mono mb-2 fixed bottom-0 right-0'>
                     <div>{ensName ? `${ensName} (${address})` : address} Connected to {connector.name}</div>
@@ -29,13 +29,13 @@ function WagmiProfile() {
 
     return (
         <>
-            <div className='items-center w-full flex flex-row justify-center gap-4'>
+            <div className='w-full flex flex-row justify-items-start gap-4'>
                 {connectors.map((connector) => (
                     <button
                         disabled={!connector.ready}
                         key={connector.id}
                         onClick={() => connect({ connector })}
-                        className="font-mono p-3 hover:scale-110 hover:border-2 hover:border-white text-white rounded transition duration-300 flex items-center gap-[10px] bg-gradient-to-r  from-violet-500 to-cyan-500 text-center"
+                        className="font-mono p-3 border-2  hover:border-2 hover:border-white text-white rounded transition duration-300 flex gap-[10px] bg-gradient-to-r  from-violet-500 to-cyan-500 text-center"
                     >
                         {connector.name}
                         {!connector.ready && ' (unsupported)'}
