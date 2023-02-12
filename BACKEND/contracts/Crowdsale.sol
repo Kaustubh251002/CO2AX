@@ -24,7 +24,17 @@ import "./CoTax.sol";
  * the methods to add functionality. Consider using 'super' where appropiate to concatenate
  * behavior.
  */
-contract Crowdsale is AccessControl{
+contract Crowdsale is AccessControl {
+    bytes32 public constant HEAD_ROLE = keccak256("HEAD_ROLE");
+
+    bytes32 public constant INDUSTRY_ROLE = keccak256("INDUSTRY_ROLE");
+    bytes32 public constant PAY_ROLE = keccak256("PAY_ROLE");
+
+    bytes32 public constant FOOD_ROLE = keccak256("FOOD_ROLE");
+    bytes32 public constant TECHNOLOGY_ROLE = keccak256("TECHNOLOGY_ROLE");
+    bytes32 public constant MANUFACTURING_ROLE =
+        keccak256("MANUFACTURING_ROLE");
+    bytes32 public constant AGRICULTURE_ROLE = keccak256("AGRICULTURE_ROLE");
     using SafeMath for uint256;
 
     // The token being sold
@@ -91,7 +101,11 @@ contract Crowdsale is AccessControl{
      * @dev low level token purchase ***DO NOT OVERRIDE***
      * @param _beneficiary Address performing the token purchase
      */
-    function buyTokens(address _beneficiary) public payable onlyRole(INDUSTRY_ROLE){
+    function buyTokens(address _beneficiary)
+        public
+        payable
+        onlyRole(INDUSTRY_ROLE)
+    {
         uint256 weiAmount = msg.value;
         _preValidatePurchase(_beneficiary, weiAmount);
 

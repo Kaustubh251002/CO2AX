@@ -6,6 +6,16 @@ import "./CoTax.sol";
 // import "@openzeppelin/contracts/token/CoTax/CoTax.sol";
 
 contract Gov_side is AccessControl {
+    bytes32 public constant HEAD_ROLE = keccak256("HEAD_ROLE");
+
+    bytes32 public constant INDUSTRY_ROLE = keccak256("INDUSTRY_ROLE");
+    bytes32 public constant PAY_ROLE = keccak256("PAY_ROLE");
+
+    bytes32 public constant FOOD_ROLE = keccak256("FOOD_ROLE");
+    bytes32 public constant TECHNOLOGY_ROLE = keccak256("TECHNOLOGY_ROLE");
+    bytes32 public constant MANUFACTURING_ROLE =
+        keccak256("MANUFACTURING_ROLE");
+    bytes32 public constant AGRICULTURE_ROLE = keccak256("AGRICULTURE_ROLE");
     bytes32[] private all_industry = [
         FOOD_ROLE,
         TECHNOLOGY_ROLE,

@@ -14,7 +14,7 @@ export default function Connect2() {
                         Enter Gas Emition Your Company
                     </div>
                     <form style={{ marginTop: "3vh" }}>
-                        <h2>Company Registration</h2>
+                        <h2>Company's Emition</h2>
                         {/* <label for="name">Company Name: </label>
                         <input type="text" id="name" name="name" /><br /> */}
                         <label for="CO2">CO2 equivalent emissions in metric tons:   </label>
