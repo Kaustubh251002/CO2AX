@@ -23,6 +23,11 @@ export default function Navbar() {
             Twitter
           </button>
         </a>
+        <a href="/form2" target="_blank" rel="noreferrer">
+          <button >
+            Enter Gas Emition
+          </button>
+        </a>
         {/* <button style={{flex:"0 200px"}} id="connect" onClick={name}>Connect wallet</button> */}
         {/* {address && <ul >Network:{chain.name}</ul>} */}
         <Web3Button />

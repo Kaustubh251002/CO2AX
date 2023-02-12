@@ -14,8 +14,19 @@ contract CoTax is ERC20, AccessControl {
         _grantRole(HEAD_ROLE, msg.sender);
     }
 
+    function Transfer_to_gov(
+        address _owner,
+        address _to,
+        uint256 _amt
+    ) public onlyRole(PAY_ROLE) {
+        _transfer(_owner, _to, _amt);
+    }
+
     function mint(uint256 amount) public {
-        require(hasRole(MINTER_ROLE, msg.sender) || hasRole(HEAD_ROLE, msg.sender ), "Caller is not a minter or head");
+        require(
+            hasRole(MINTER_ROLE, msg.sender) || hasRole(HEAD_ROLE, msg.sender),
+            "Caller is not a minter or head"
+        );
         _mint(msg.sender, amount);
     }
 }

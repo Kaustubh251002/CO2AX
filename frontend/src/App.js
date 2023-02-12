@@ -38,6 +38,7 @@ function App() {
             <Route exact path='/form' element={link.form()}></Route>
             <Route exact path='/test' element={link.test()}></Route>
             <Route exact path='/proo' element={link.dis()}></Route>
+            <Route exact path='/form2' element={link.form2()}></Route>
           </Routes>
         </Router>
       </WagmiConfig>

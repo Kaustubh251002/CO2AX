@@ -8,6 +8,7 @@ import { LoadComp } from "./components/test";
 import Caution from "./components/caution";
 import Buy from "./components/buy";
 import { MintNFT } from "./components/problem";
+import Connect2 from "./components/form2";
 export const first = () => {
     return (<>
         <Navbar />
@@ -22,6 +23,14 @@ export const form = () => {
     return (<>
         <Navbar />
         <Connect />
+        <Caution/>
+    </>
+    )
+}
+export const form2 = () => {
+    return (<>
+        <Navbar />
+        <Connect2 />
         <Caution/>
     </>
     )
