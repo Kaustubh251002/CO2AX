@@ -1,0 +1,49 @@
+{"product":[
+
+    {
+        "id":"/img/dell.png",
+        "name":"Dell",
+        "price":"15 tons"
+    },
+    
+    {
+        "id":"/img/kfc.png",
+        "name":"KFC",
+        "price":"12 tons"
+    },
+    
+    {
+        "id":"/img/google.png",
+        "name":"Google",
+        "price":"35 tons"
+    },
+    
+    {
+        "id":"/img/tata.png",
+        "name":"Tata Steel",
+        "price":"50 tons"
+    },
+    
+    {
+        "id":"/img/starbucks.png",
+        "name":"StarBucks",
+        "price":"8 tons"
+    },
+    
+    {
+        "id":"/img/adani.png",
+        "name":"Adani Steel",
+        "price":"47 tons"
+    },
+    {
+        "id":"/img/gamla.png",
+        "name":"Gamla Co.",
+        "price":"5 tons"
+    },
+    
+    {
+        "id":"/img/dupont.png",
+        "name":"DuPont",
+        "price":"9 tons"
+    }
+]}

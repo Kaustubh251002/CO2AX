@@ -1,0 +1,9 @@
+
+.nav-flex{
+    height: 4rem;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0rem 2rem 0rem 2rem;
+}

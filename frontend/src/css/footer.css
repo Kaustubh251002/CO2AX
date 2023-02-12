@@ -1,0 +1,11 @@
+.footer{
+    padding-top: 2rem;
+    background-color: rgba(255, 47, 47, 0.306);
+    height:60vh;
+    text-align: center;
+}
+.footer:hover{
+    background-color: rgba(255, 47, 47, 0.306);
+    font-size: x-large;
+    transition: 2s;
+}

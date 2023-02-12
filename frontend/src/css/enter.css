@@ -1,0 +1,21 @@
+.formCard{
+    width: max-content;
+    height: max-content;
+    margin-left: 40%;
+    margin-top: 45px;
+    margin-bottom: 45px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    align-items: center;
+    text-align: center;
+    font-family: 'Montserrat';
+    font-weight: 700;
+    color: aliceblue;
+    transition: 1s;
+    background-color: rgba(240, 248, 255, 0.351);
+    border-radius: 30px;
+    border-color: aliceblue;
+    border-width: 20px;
+}

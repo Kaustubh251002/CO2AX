@@ -1,0 +1,30 @@
+.grid{
+    display: grid;
+    grid-template-rows: auto;
+    justify-content: center;
+    padding-top: 2rem;  
+}
+.grid-element{
+    background-color: rgba(9, 22, 31, 0.322);
+    backdrop-filter: blur(50px);
+    height: 75vh ;
+    width: 90vw;
+    border-radius: 30px;
+    transition: 2s;
+}
+.grid-element:hover{
+    background-color: rgba(5, 23, 30, 0.598);
+    transition: 2s;
+}
+
+
+
+.text{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    color: white;
+    font-weight: 500;
+    font-family:'Montserrat';
+}

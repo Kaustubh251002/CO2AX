@@ -1,0 +1,30 @@
+.content{
+    margin-top: 5rem;
+}
+.grid-C{
+    border-width: 3px;
+    border-color: aliceblue;
+    display: grid;
+    grid-template-columns:auto auto auto auto;
+    row-gap: 10vw;
+    justify-content: space-evenly;
+}
+.grid-C-content{
+    border-radius: 50px;
+    height: auto;
+    width: 20vw;
+    color: aliceblue;
+    text-align: center;
+    font-size:medium;
+    padding: 30px;
+}
+.grid-C-content:hover{
+    background-color:  #24262b57;
+    transition: 1s ;
+    /* height: 52vh;
+    width: 22vw; */
+}
+.grid-C-content >img{
+    width: 100px;
+    height: 100px;
+}

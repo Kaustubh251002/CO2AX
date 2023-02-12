@@ -1,0 +1,48 @@
+.grid-buy{
+    display: grid;
+    grid-template-columns:auto;
+    align-content: center; 
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50% ;
+    color: aliceblue;
+}
+.grid-buy-container{
+    padding: 20px;
+    border-radius: 50px;
+    background-color: rgb(38, 38, 38);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 10px 10px 5px 5px  #888888;
+}
+.buy-grid-inside{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    
+}
+.grid-inside-buy-container{
+    box-shadow: 10px 10px 10px 10px  #888888;
+    text-align: center;
+    font-size: large;
+    border-radius: 50px;
+    padding: 2rem;
+}
+/* .grid-inside-buy-container>button{
+
+    margin:20px;
+}
+.grid-inside-buy-container>button:hover{
+    width: 20%;
+} */
+.buy-grid-inside>img{
+    box-shadow: 10px 10px 5px 5px  #888888;
+    border-radius: 100px;
+    height: 50%;
+}
