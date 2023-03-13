@@ -19,7 +19,7 @@ To get a local copy up and running follow these simple steps.
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/Kaustubh251002/Drip-Monitor/
+   git clone https://github.com/Kaustubh251002/CO2AX
    ```
 2. Install NPM packages for the backend
    ```sh
